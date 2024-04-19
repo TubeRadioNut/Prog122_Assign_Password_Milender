@@ -1,0 +1,90 @@
+﻿<Window
+    x:Class="Prog122_Assign_Password_Milender.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Prog122_Assign_Password_Milender"
+    mc:Ignorable="d"
+    Title="MainWindow"
+    Height="450"
+    Width="800">
+    <Canvas
+        Background="#FFCEC7C7">
+        <Label
+            Content="User Name"
+            Canvas.Left="92"
+            Canvas.Top="10"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontSize="18" />
+        <TextBox
+            x:Name="txtUserName"
+            Canvas.Left="111"
+            TextWrapping="Wrap"
+            Canvas.Top="49"
+            Width="544"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontSize="16" />
+        <Label
+            Content="Password"
+            Canvas.Left="92"
+            Canvas.Top="77"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontSize="18" />
+        <TextBox
+            x:Name="txtPassWord"
+            Canvas.Left="111"
+            TextWrapping="Wrap"
+            Canvas.Top="111"
+            Width="544"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontSize="16" />
+        <RichTextBox
+            Height="115"
+            Width="544"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Canvas.Left="111"
+            Canvas.Top="289">
+            <FlowDocument>
+                <Paragraph>
+                    <Run
+                        x:Name="rtbDisplay"
+                        Text="" />
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label
+            Content="Developer Log"
+            Canvas.Left="92"
+            Canvas.Top="250"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontSize="18" />
+        <Button
+            x:Name="btnSignIn"
+            Content="Sign In"
+            Canvas.Left="111"
+            Canvas.Top="155"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Width="544"
+            Height="33"
+            Click="btnSignIn_Click" />
+        <Button
+            x:Name="btnSignUp"
+            Content="Sign Up"
+            Canvas.Left="111"
+            Canvas.Top="207"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Width="544"
+            Height="33"
+            Click="btnSignUp_Click" />
+
+    </Canvas>
+</Window>
