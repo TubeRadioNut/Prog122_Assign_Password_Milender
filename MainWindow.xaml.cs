@@ -34,8 +34,17 @@ namespace Prog122_Assign_Password_Milender
             //create variables for login user input from text boxes
             string logInUserName = txtUserName.Text;
             string logInPassword = txtPassWord.Text;
-            //test user input with if/else, first check username and password match stored username and password
-            if(logInUserName == userName && logInPassword == password)
+            //test user input with if, elseif, else, first check username and password have been created, then check username and
+            //password match stored username and password
+            if(userName == null && password == null)
+            {
+                //inform user that username and password are not set
+                MessageBox.Show("Username and password not set");
+                //log user input
+                rtbDisplay.Text += "Sign In Attempt: Username and/or password not set \n";
+
+            }
+            else if(logInUserName == userName && logInPassword == password)
             {
                 //inform user of successful login
                 MessageBox.Show($"Login Successful");
@@ -44,6 +53,7 @@ namespace Prog122_Assign_Password_Milender
                 //clear text box fields
                 txtUserName.Text = "";
                 txtPassWord.Text = "";
+                
             }
             //only runs if username and password don't match stored username and password
             //inform user of invalid username or password
@@ -69,7 +79,10 @@ namespace Prog122_Assign_Password_Milender
                 //inform user to input valid user name and password
                 MessageBox.Show("Please enter a valid user name and password");
                 //log user input
-                rtbDisplay.Text = $"Sign up Attempt: Empty fields - Username:{userName} , Password:{password} \n";
+                rtbDisplay.Text += $"Sign up Attempt: Empty fields - Username:{userName} , Password:{password} \n";
+                //set userName and password variables to null
+                userName = null;
+                password = null;
             }
             //test user input for password: make sure it is at lest 8 charaters
             else if (password.Length < 8)
@@ -78,6 +91,9 @@ namespace Prog122_Assign_Password_Milender
                 MessageBox.Show("The Password must be 8 charaters minimum");
                 //log user input
                 rtbDisplay.Text += $"Sign Up Attempt: Password too short - Username: {userName}, Password: {password} \n";
+                //set userName and password variables to null
+                userName = null;
+                password = null;
             }
             //inform user of successful creation of username and password
             else
@@ -85,7 +101,7 @@ namespace Prog122_Assign_Password_Milender
                 //inform user of successful sign up
                 MessageBox.Show("Sign Up Successful");
                 //log user input
-                rtbDisplay.Text = $"Sign Up Successful - Username: {userName}, Password: {password} \n";
+                rtbDisplay.Text += $"Sign Up Successful - Username: {userName}, Password: {password} \n";
             }
             //clear text box fields
             txtUserName.Text = "";
